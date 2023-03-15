@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
             Text('로고 들어갈 자리'),
             TextButton(
               onPressed: () {
-                Get.to(QuestionView());
+                Get.off(QuestionView());
               },
               child: Text('테스트 시작하기'),
             ),
