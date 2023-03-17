@@ -20,7 +20,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.QUESTION,
-      page: () => const QuestionView(),
+      page: () => QuestionView(),
       binding: QuestionBinding(),
     ),
   ];
