@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
+import 'package:flutter_cube/flutter_cube.dart';
 
 class QuestionController extends GetxController {
+  late Object Hamburger;
+
   List<String> questionList = <String>[].obs;
 
   List<String> Q1 = <String>[
@@ -15,11 +18,22 @@ class QuestionController extends GetxController {
     '맥주',
   ];
 
+  var isHover = true.obs;
+
+  var A1 = true.obs;
+  var A2 = true.obs;
+  var A3 = true.obs;
+
+  isHovered() {
+    isHover.value == true;
+  }
+
   questionBtnClicked(question) {}
 
   @override
   void onInit() {
     super.onInit();
+    Hamburger = Object(fileName: "assets/Hamburger/Hamburger_01.obj");
   }
 
   @override

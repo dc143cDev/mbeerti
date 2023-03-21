@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cube/flutter_cube.dart';
 
 import 'package:get/get.dart';
 import 'package:mbeerti/app/modules/question/controllers/question_controller.dart';
@@ -10,6 +11,7 @@ class Question3View extends GetView<QuestionController> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          print(controller.questionList.join().toString());
           print(controller.questionList.toString());
         },
       ),
@@ -18,11 +20,13 @@ class Question3View extends GetView<QuestionController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'Question3View is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+          child: Cube(
+        interactive: true,
+        onSceneCreated: (Scene s) {
+          s.world.add(Object(fileName: 'assets/Cheeseburger/Hamburger.obj'));
+          s.camera.zoom = 13;
+        },
+      )),
     );
   }
 }
