@@ -10,13 +10,11 @@ class Question3View extends GetView<QuestionController> {
   @override
   Widget build(BuildContext context) {
     Get.lazyReplace(() => QuestionController());
-    // Get.put(ResultController());
-    // ResultController resultController = ResultController();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           controller.getResult();
-          // print(resultController.questionList.join().toString());
+          print(controller.questionList.join().toString());
         },
       ),
       appBar: AppBar(

@@ -41,7 +41,7 @@ class Question2View extends GetView<QuestionController> {
                     //1-A.
                     child: QuestionButton(
                       value: 1,
-                      codeKey: controller.A1,
+                      codeKey: controller.hover1,
                       question: '두번째 페이지 첫째 질문.',
                       onTap: () {
                         // resultController.questionList.insert(1, 'A');
@@ -55,7 +55,7 @@ class Question2View extends GetView<QuestionController> {
                     //1-A.
                     child: QuestionButton(
                       value: 2,
-                      codeKey: controller.A2,
+                      codeKey: controller.hover2,
                       question: '두번째 페이지 둘째 질문.',
                       onTap: () {
                         // resultController.questionList.insert(1, 'B');
@@ -69,7 +69,7 @@ class Question2View extends GetView<QuestionController> {
                     //1-A.
                     child: QuestionButton(
                       value: 3,
-                      codeKey: controller.A3,
+                      codeKey: controller.hover3,
                       question: '두번째 페이지 셋째 질문.',
                       onTap: () {
                         // resultController.questionList.insert(1, 'C');
