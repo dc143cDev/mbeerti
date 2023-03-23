@@ -23,4 +23,22 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+  fonts:
+    - family: LOB
+      fonts:
+        - asset: assets/fonts/Lobster/Lobster-Regular.ttf
+          weight: 700
+    - family: GD
+      fonts:
+        - asset: assets/fonts/Gowun_Dodum/GowunDodum-Regular.ttf
+          weight: 400
+    - family: HH
+      fonts:
+        - asset: assets/fonts/Hahmlet/static/Hahmlet-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Hahmlet/static/Hahmlet-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Hahmlet/static/Hahmlet-Bold.ttf
+          weight: 700
+
 

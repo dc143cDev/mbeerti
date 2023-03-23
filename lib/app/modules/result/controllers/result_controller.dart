@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
 class ResultController extends GetxController {
-  //TODO: Implement ResultController
+  //코드 추산.
+  List<String> questionList = <String>[].obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +18,4 @@ class ResultController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

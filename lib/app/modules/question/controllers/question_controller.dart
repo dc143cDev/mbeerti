@@ -20,15 +20,13 @@ class QuestionController extends GetxController {
 
   var isHover = true.obs;
 
-  var A1 = true.obs;
-  var A2 = true.obs;
-  var A3 = true.obs;
+  var A1 = false.obs;
+  var A2 = false.obs;
+  var A3 = false.obs;
 
   isHovered() {
     isHover.value == true;
   }
-
-  questionBtnClicked(question) {}
 
   @override
   void onInit() {

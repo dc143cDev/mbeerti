@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mbeerti/app/modules/question/views/question_button.dart';
 import 'package:mbeerti/app/modules/question/views/question2_view.dart';
+import 'package:mbeerti/app/modules/result/controllers/result_controller.dart';
 
 import '../controllers/question_controller.dart';
 
@@ -12,6 +13,8 @@ class QuestionView extends GetView<QuestionController> {
   @override
   Widget build(BuildContext context) {
     Get.put(QuestionController());
+    Get.put(ResultController());
+    ResultController resultController = ResultController();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -21,6 +24,7 @@ class QuestionView extends GetView<QuestionController> {
       appBar: AppBar(
         title: const Text('QuestionView'),
         centerTitle: false,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(
@@ -32,7 +36,7 @@ class QuestionView extends GetView<QuestionController> {
               child: Text('애니메이션 일러스트 자리'),
             ),
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Text('(음용성 1. 선호하는 탄산 질감에 관한 질문)'),
             ),
             Expanded(
@@ -48,10 +52,14 @@ class QuestionView extends GetView<QuestionController> {
                       codeKey: controller.A1,
                       question: '탄산음료(강한 탄산감 선호).',
                       onTap: () {
-                        controller.questionList.insert(0, 'A');
-                        Get.to(Question2View());
+                        resultController.questionList.insert(0, 'A');
+                        // Get.toNamed('/question2');
+                        Get.offAndToNamed('/question2');
                       },
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Expanded(
                     //1-B.
@@ -60,10 +68,14 @@ class QuestionView extends GetView<QuestionController> {
                       codeKey: controller.A2,
                       question: '부드러운 라떼(탄산이 아예 없는 부드러운 질감 선호).',
                       onTap: () {
-                        controller.questionList.insert(0, 'B');
-                        Get.to(Question2View());
+                        resultController.questionList.insert(0, 'B');
+                        // Get.toNamed('/question2');
+                        Get.offAndToNamed('/question2');
                       },
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Expanded(
                     //1-C.
@@ -72,10 +84,14 @@ class QuestionView extends GetView<QuestionController> {
                       codeKey: controller.A3,
                       question: '.',
                       onTap: () {
-                        controller.questionList.insert(0, 'C');
-                        Get.to(Question2View());
+                        resultController.questionList.insert(0, 'C');
+                        // Get.toNamed('/question2');
+                        Get.offAndToNamed('/question2');
                       },
                     ),
+                  ),
+                  SizedBox(
+                    height: 40,
                   ),
                 ],
               ),
