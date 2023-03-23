@@ -9,13 +9,14 @@ class Question3View extends GetView<QuestionController> {
   const Question3View({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Get.put(QuestionController());
-    Get.put(ResultController());
-    ResultController resultController = ResultController();
+    Get.lazyReplace(() => QuestionController());
+    // Get.put(ResultController());
+    // ResultController resultController = ResultController();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print(resultController.questionList.join().toString());
+          controller.getResult();
+          // print(resultController.questionList.join().toString());
         },
       ),
       appBar: AppBar(

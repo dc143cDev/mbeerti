@@ -3,19 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mbeerti/app/modules/question/controllers/question_controller.dart';
 import 'package:mbeerti/app/modules/question/views/question_button.dart';
-import 'package:mbeerti/app/modules/result/controllers/result_controller.dart';
 
 class Question2View extends GetView<QuestionController> {
   const Question2View({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Get.put(QuestionController());
-    Get.put(ResultController());
-    ResultController resultController = ResultController();
+    Get.find<QuestionController>();
+    // Get.put(ResultController());
+    // ResultController resultController = ResultController();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print(resultController.questionList.join().toString());
+          // print(resultController.questionList.join().toString());
         },
       ),
       appBar: AppBar(
@@ -45,9 +44,10 @@ class Question2View extends GetView<QuestionController> {
                       codeKey: controller.A1,
                       question: '두번째 페이지 첫째 질문.',
                       onTap: () {
-                        resultController.questionList.insert(1, 'A');
+                        // resultController.questionList.insert(1, 'A');
                         // Get.toNamed('/question3');
-                        Get.offAndToNamed('/question3');
+                        controller.storage.write('2', 'A');
+                        Get.toNamed('/question3');
                       },
                     ),
                   ),
@@ -58,9 +58,10 @@ class Question2View extends GetView<QuestionController> {
                       codeKey: controller.A2,
                       question: '두번째 페이지 둘째 질문.',
                       onTap: () {
-                        resultController.questionList.insert(1, 'B');
+                        // resultController.questionList.insert(1, 'B');
                         // Get.toNamed('/question3');
-                        Get.offAndToNamed('/question3');
+                        controller.storage.write('2', 'B');
+                        Get.toNamed('/question3');
                       },
                     ),
                   ),
@@ -71,9 +72,10 @@ class Question2View extends GetView<QuestionController> {
                       codeKey: controller.A3,
                       question: '두번째 페이지 셋째 질문.',
                       onTap: () {
-                        resultController.questionList.insert(1, 'C');
+                        // resultController.questionList.insert(1, 'C');
                         // Get.toNamed('/question3');
-                        Get.offAndToNamed('/question3');
+                        controller.storage.write('2', 'C');
+                        Get.toNamed('/question3');
                       },
                     ),
                   ),

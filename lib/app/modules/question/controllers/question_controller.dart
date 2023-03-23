@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 import 'package:flutter_cube/flutter_cube.dart';
+import 'package:get_storage/get_storage.dart';
 
 class QuestionController extends GetxController {
-  late Object Hamburger;
+  final storage = GetStorage();
 
   List<String> questionList = <String>[].obs;
 
@@ -28,10 +29,16 @@ class QuestionController extends GetxController {
     isHover.value == true;
   }
 
+  getResult() {
+    storage.read('1');
+    storage.read('2');
+    print(storage.read('1'));
+    print(storage.read('2'));
+  }
+
   @override
   void onInit() {
     super.onInit();
-    Hamburger = Object(fileName: "assets/Hamburger/Hamburger_01.obj");
   }
 
   @override

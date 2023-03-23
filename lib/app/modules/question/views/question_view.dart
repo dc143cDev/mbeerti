@@ -13,8 +13,8 @@ class QuestionView extends GetView<QuestionController> {
   @override
   Widget build(BuildContext context) {
     Get.put(QuestionController());
-    Get.put(ResultController());
-    ResultController resultController = ResultController();
+    // Get.put(ResultController());
+    // ResultController resultController = ResultController();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -52,9 +52,10 @@ class QuestionView extends GetView<QuestionController> {
                       codeKey: controller.A1,
                       question: '탄산음료(강한 탄산감 선호).',
                       onTap: () {
-                        resultController.questionList.insert(0, 'A');
+                        // resultController.questionList.insert(0, 'A');
                         // Get.toNamed('/question2');
-                        Get.offAndToNamed('/question2');
+                        controller.storage.write('1', 'A');
+                        Get.toNamed('/question2');
                       },
                     ),
                   ),
@@ -68,9 +69,10 @@ class QuestionView extends GetView<QuestionController> {
                       codeKey: controller.A2,
                       question: '부드러운 라떼(탄산이 아예 없는 부드러운 질감 선호).',
                       onTap: () {
-                        resultController.questionList.insert(0, 'B');
+                        // resultController.questionList.insert(0, 'B');
                         // Get.toNamed('/question2');
-                        Get.offAndToNamed('/question2');
+                        controller.storage.write('1', 'B');
+                        Get.toNamed('/question2');
                       },
                     ),
                   ),
@@ -84,9 +86,10 @@ class QuestionView extends GetView<QuestionController> {
                       codeKey: controller.A3,
                       question: '.',
                       onTap: () {
-                        resultController.questionList.insert(0, 'C');
+                        // resultController.questionList.insert(0, 'C');
                         // Get.toNamed('/question2');
-                        Get.offAndToNamed('/question2');
+                        controller.storage.write('1', 'C');
+                        Get.toNamed('/question2');
                       },
                     ),
                   ),
