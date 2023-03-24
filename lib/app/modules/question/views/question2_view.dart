@@ -32,7 +32,11 @@ class Question2View extends GetView<QuestionController> {
               child: Text('애니메이션 일러스트 자리'),
             ),
             Expanded(
-              flex: 7,
+              flex: 2,
+              child: Text('(? 두번째 질문)'),
+            ),
+            Expanded(
+              flex: 4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -51,6 +55,9 @@ class Question2View extends GetView<QuestionController> {
                       },
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Expanded(
                     //1-A.
                     child: QuestionButton(
@@ -65,6 +72,9 @@ class Question2View extends GetView<QuestionController> {
                       },
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Expanded(
                     //1-A.
                     child: QuestionButton(
@@ -78,6 +88,9 @@ class Question2View extends GetView<QuestionController> {
                         Get.toNamed('/question3');
                       },
                     ),
+                  ),
+                  SizedBox(
+                    height: 40,
                   ),
                 ],
               ),
