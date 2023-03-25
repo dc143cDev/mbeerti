@@ -38,8 +38,9 @@ class QuestionButton<T> extends GetView<QuestionController> {
             curve: Curves.ease,
             // padding: EdgeInsets.all(codeKey?.value ? 30 : 10),
             decoration: BoxDecoration(
-                color: codeKey?.value ? hopGreen : Colors.white,
-                borderRadius: BorderRadius.circular(15),
+                color: hopGreen,
+                // color: codeKey?.value ? hopGreen : Colors.white,
+                borderRadius: BorderRadius.circular(40),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.7),

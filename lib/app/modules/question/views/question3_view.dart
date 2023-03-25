@@ -3,7 +3,7 @@ import 'package:flutter_cube/flutter_cube.dart';
 
 import 'package:get/get.dart';
 import 'package:mbeerti/app/modules/question/controllers/question_controller.dart';
-import 'package:mbeerti/app/modules/question/views/question_button.dart';
+import 'package:mbeerti/global/question_button.dart';
 import 'package:mbeerti/app/modules/result/controllers/result_controller.dart';
 
 class Question3View extends GetView<QuestionController> {

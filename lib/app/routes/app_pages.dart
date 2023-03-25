@@ -27,21 +27,25 @@ class AppPages {
       name: _Paths.QUESTION,
       page: () => QuestionView(),
       binding: QuestionBinding(),
+      transition: Transition.zoom,
     ),
     GetPage(
       name: _Paths.QUESTION2,
       page: () => Question2View(),
       binding: QuestionBinding(),
+      transition: Transition.zoom,
     ),
     GetPage(
       name: _Paths.QUESTION3,
       page: () => Question3View(),
       binding: QuestionBinding(),
+      transition: Transition.leftToRightWithFade,
     ),
     GetPage(
       name: _Paths.QUESTION4,
       page: () => Question4View(),
       binding: QuestionBinding(),
+      transition: Transition.zoom,
     ),
     // GetPage(
     //   name: _Paths.QUESTION5,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:mbeerti/app/modules/question/views/question_button.dart';
-import 'package:mbeerti/app/modules/question/views/question2_view.dart';
-import 'package:mbeerti/app/modules/result/controllers/result_controller.dart';
+import 'package:mbeerti/global/question_button.dart';
 
 import '../controllers/question_controller.dart';
 
@@ -16,15 +14,11 @@ class QuestionView extends GetView<QuestionController> {
     // Get.put(ResultController());
     // ResultController resultController = ResultController();
     return Scaffold(
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print(controller.isHover.value.toString());
         },
-      ),
-      appBar: AppBar(
-        title: const Text('QuestionView'),
-        centerTitle: false,
-        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(
@@ -33,7 +27,7 @@ class QuestionView extends GetView<QuestionController> {
           children: [
             Expanded(
               flex: 3,
-              child: Text('애니메이션 일러스트 자리'),
+              child: Text('애니메이션 일러스트 자리(임시)'),
             ),
             Expanded(
               flex: 2,

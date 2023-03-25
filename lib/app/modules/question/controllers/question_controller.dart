@@ -7,16 +7,9 @@ class QuestionController extends GetxController {
   List<String> questionList = <String>[].obs;
 
   var isHover = true.obs;
-
   var hover1 = false.obs;
   var hover2 = false.obs;
   var hover3 = false.obs;
-
-  // var result1 = ''.obs;
-  // var result2 = ''.obs;
-  // var result3 = ''.obs;
-  // var result4 = ''.obs;
-  // var result5 = ''.obs;
 
   getResult() {
     questionList.insert(0, storage.read('1'));

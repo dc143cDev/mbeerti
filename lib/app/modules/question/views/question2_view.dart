@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:mbeerti/app/modules/question/controllers/question_controller.dart';
-import 'package:mbeerti/app/modules/question/views/question_button.dart';
+import 'package:mbeerti/global/question_button.dart';
 
 class Question2View extends GetView<QuestionController> {
   const Question2View({Key? key}) : super(key: key);
