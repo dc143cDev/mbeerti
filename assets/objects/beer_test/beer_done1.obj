@@ -1,6 +1,6 @@
 # Blender 3.4.1
 # www.blender.org
-mtllib beer_done.mtl
+mtllib beer_done1.mtl
 o Cylinder
 v 0.000000 -0.191464 -0.148644
 v 0.028999 -0.191464 -0.145788
