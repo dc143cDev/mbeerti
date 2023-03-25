@@ -8,7 +8,7 @@ class Question2View extends GetView<QuestionController> {
   const Question2View({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Get.find<QuestionController>();
+    Get.put(QuestionController());
     // Get.put(ResultController());
     // ResultController resultController = ResultController();
     return Scaffold(

@@ -6,6 +6,8 @@ class QuestionController extends GetxController {
 
   List<String> questionList = <String>[].obs;
 
+  var columnUp = false.obs;
+
   var isHover = true.obs;
   var hover1 = false.obs;
   var hover2 = false.obs;
@@ -18,6 +20,7 @@ class QuestionController extends GetxController {
 
   @override
   void onInit() {
+    columnUp.value == true;
     super.onInit();
   }
 

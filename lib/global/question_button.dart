@@ -34,6 +34,9 @@ class QuestionButton<T> extends GetView<QuestionController> {
           () => AnimatedContainer(
             width: codeKey?.value ? 530 : 460,
             height: codeKey?.value ? 170 : 130,
+            transform: Transform.translate(
+                    offset: Offset(0, codeKey?.value ? -100 : 0))
+                .transform,
             duration: Duration(milliseconds: 200),
             curve: Curves.ease,
             // padding: EdgeInsets.all(codeKey?.value ? 30 : 10),

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../../global/question_button.dart';
 import '../controllers/question_controller.dart';
 
-class Question1View extends GetView {
+class Question1View extends GetView<QuestionController> {
   const Question1View({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,8 @@ class Question1View extends GetView {
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print(controller.isHover.value.toString());
+          controller.columnUp.value = true;
+          // print(controller.isHover.value.toString());
         },
       ),
       body: Center(

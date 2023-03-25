@@ -33,7 +33,7 @@ class HomeView extends GetView<HomeController> {
             ),
             TextButton(
               onPressed: () {
-                Get.off(Question1View());
+                Get.to(Question1View());
               },
               child: MainText(
                 text: '테스트 시작하기',
@@ -42,7 +42,7 @@ class HomeView extends GetView<HomeController> {
             ),
             TextButton(
               onPressed: () {
-                Get.off(QuestionView());
+                Get.to(QuestionView());
               },
               child: MainText(
                 text: 'go to debug page',
@@ -51,7 +51,7 @@ class HomeView extends GetView<HomeController> {
             ),
             TextButton(
               onPressed: () {
-                Get.off(ResultView());
+                Get.to(ResultView());
               },
               child: MainText(
                 text: 'go to result',
