@@ -21,6 +21,7 @@ class QuestionController extends GetxController {
   var hover1 = false.obs;
   var hover2 = false.obs;
   var hover3 = false.obs;
+  var hover4 = false.obs;
 
   getResult() {
     questionList.insert(0, storage.read('1'));
