@@ -35,9 +35,9 @@ class QuestionButton<T> extends GetView<QuestionController> {
         child: Obx(
           () => AnimatedContainer(
             width: codeKey?.value ? 530 : 460,
-            height: codeKey?.value ? 170 : 130,
+            height: codeKey?.value ? 155 : 130,
             transform:
-                Transform.translate(offset: Offset(0, codeKey?.value ? -30 : 0))
+                Transform.translate(offset: Offset(0, codeKey?.value ? -25 : 0))
                     .transform,
             duration: Duration(milliseconds: 200),
             curve: Curves.ease,
@@ -58,7 +58,10 @@ class QuestionButton<T> extends GetView<QuestionController> {
               child: Text(
                 question!,
                 style: TextStyle(
-                    color: isSelected?.value ? Colors.white : hopGreen),
+                    color: isSelected?.value ? Colors.white : hopGreen,
+                    fontFamily: 'NTKR',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
               ),
             ),
           ),

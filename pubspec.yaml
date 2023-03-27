@@ -30,6 +30,14 @@ flutter:
       fonts:
         - asset: assets/fonts/Lobster/Lobster-Regular.ttf
           weight: 700
+    - family: NTKR
+      fonts:
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf
+          weight: 300
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Medium.otf
+          weight: 400
+        - asset: assets/fonts/Noto_Sans_KR/NotoSansKR-Bold.otf
+          weight: 700
     - family: GD
       fonts:
         - asset: assets/fonts/Gowun_Dodum/GowunDodum-Regular.ttf

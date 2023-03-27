@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:mbeerti/global/main_text.dart';
+import 'package:mbeerti/global/palette.dart';
 
 import '../../../../global/question_button.dart';
 import '../controllers/question_controller.dart';
@@ -25,15 +27,26 @@ class Question1View extends GetView<QuestionController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              flex: 3,
-              child: Text('애니메이션 일러스트 자리'),
-            ),
+                flex: 3,
+                child: Text(
+                  'Q1.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'NTKR',
+                    color: hopGreen,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 25,
+                  ),
+                )),
             Expanded(
               flex: 2,
-              child: Text('(음용성 1. 선호하는 탄산 질감에 관한 질문)'),
+              child: MainText(
+                text: '오랜만에 잡힌 술 약속, 오늘은 내가 약속 장소를 정하는 날이에요.\n어디로 갈까요?',
+                fontWeight: FontWeight.w700,
+              ),
             ),
             Expanded(
-              flex: 4,
+              flex: 5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -47,10 +60,12 @@ class Question1View extends GetView<QuestionController> {
                       question: '탄산음료(강한 탄산감 선호).',
                       onTap: () {
                         if (controller.isSelectedA2.value ||
-                            controller.isSelectedA3.value == true) {
+                            controller.isSelectedA3.value ||
+                            controller.isSelectedA4.value == true) {
                           controller.isSelectedA1.value = true;
                           controller.isSelectedA2.value = false;
                           controller.isSelectedA3.value = false;
+                          controller.isSelectedA4.value = false;
                         } else {
                           controller.isSelectedA1.value = true;
                         }
@@ -73,10 +88,12 @@ class Question1View extends GetView<QuestionController> {
                       question: '부드러운 라떼(탄산이 아예 없는 부드러운 질감 선호).',
                       onTap: () {
                         if (controller.isSelectedA1.value ||
-                            controller.isSelectedA3.value == true) {
+                            controller.isSelectedA3.value ||
+                            controller.isSelectedA4.value == true) {
                           controller.isSelectedA2.value = true;
                           controller.isSelectedA1.value = false;
                           controller.isSelectedA3.value = false;
+                          controller.isSelectedA4.value = false;
                         } else {
                           controller.isSelectedA2.value = true;
                         }
@@ -100,10 +117,12 @@ class Question1View extends GetView<QuestionController> {
                       question: '.',
                       onTap: () {
                         if (controller.isSelectedA1.value ||
-                            controller.isSelectedA2.value == true) {
+                            controller.isSelectedA2.value ||
+                            controller.isSelectedA4 == true) {
                           controller.isSelectedA3.value = true;
                           controller.isSelectedA1.value = false;
                           controller.isSelectedA2.value = false;
+                          controller.isSelectedA4.value = false;
                         } else {
                           controller.isSelectedA3.value = true;
                         }
@@ -116,7 +135,36 @@ class Question1View extends GetView<QuestionController> {
                     ),
                   ),
                   SizedBox(
-                    height: 45,
+                    height: 20,
+                  ),
+                  Expanded(
+                    //1-C.
+                    child: QuestionButton(
+                      value: 3,
+                      codeKey: controller.hover4,
+                      isSelected: controller.isSelectedA4,
+                      question: '.',
+                      onTap: () {
+                        if (controller.isSelectedA1.value ||
+                            controller.isSelectedA2.value ||
+                            controller.isSelectedA3.value == true) {
+                          controller.isSelectedA4.value = true;
+                          controller.isSelectedA1.value = false;
+                          controller.isSelectedA2.value = false;
+                          controller.isSelectedA3.value = false;
+                        } else {
+                          controller.isSelectedA4.value = true;
+                        }
+                        controller.isSelectedA4.value = true;
+                        controller.hover4.value = true;
+                        controller.storage.write('1', 'D');
+                        print('q1: ${controller.storage.read('1')}');
+                        Get.toNamed('/question2');
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                 ],
               ),

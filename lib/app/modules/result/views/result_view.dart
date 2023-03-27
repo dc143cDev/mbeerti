@@ -20,26 +20,10 @@ class ResultView extends GetView<ResultController> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
-              width: 200,
-              height: 200,
+              width: 300,
+              height: 300,
               child: ModelViewer(
-                src: 'assets/objects/foods/orange.glb',
-                ar: true,
-                autoRotate: true,
-                cameraControls: false,
-                disableZoom: true,
-                disablePan: true,
-                disableTap: true,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              width: 200,
-              height: 200,
-              child: ModelViewer(
-                src: 'assets/objects/beer_test/beer_done.glb',
+                src: 'assets/objects/beer_test/beer_really_done2.glb',
                 ar: true,
                 autoRotate: true,
                 cameraControls: false,
