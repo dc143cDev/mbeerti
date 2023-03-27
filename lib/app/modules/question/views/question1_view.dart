@@ -116,7 +116,7 @@ class Question1View extends GetView<QuestionController> {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 45,
                   ),
                 ],
               ),
