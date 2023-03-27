@@ -16,9 +16,7 @@ class QuestionView extends GetView<QuestionController> {
     return Scaffold(
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print(controller.isHover.value.toString());
-        },
+        onPressed: () {},
       ),
       body: Center(
         child: Column(

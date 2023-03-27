@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../../global/question_button.dart';
 import '../controllers/question_controller.dart';
@@ -42,11 +43,20 @@ class Question1View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 1,
                       codeKey: controller.hover1,
+                      isSelected: controller.isSelectedA1,
                       question: '탄산음료(강한 탄산감 선호).',
                       onTap: () {
-                        // resultController.questionList.insert(0, 'A');
-                        // Get.toNamed('/question2');
+                        if (controller.isSelectedA2.value ||
+                            controller.isSelectedA3.value == true) {
+                          controller.isSelectedA1.value = true;
+                          controller.isSelectedA2.value = false;
+                          controller.isSelectedA3.value = false;
+                        } else {
+                          controller.isSelectedA1.value = true;
+                        }
+                        controller.hover1.value = true;
                         controller.storage.write('1', 'A');
+                        print('q1: ${controller.storage.read('1')}');
                         Get.toNamed('/question2');
                       },
                     ),
@@ -59,11 +69,21 @@ class Question1View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 2,
                       codeKey: controller.hover2,
+                      isSelected: controller.isSelectedA2,
                       question: '부드러운 라떼(탄산이 아예 없는 부드러운 질감 선호).',
                       onTap: () {
-                        // resultController.questionList.insert(0, 'B');
-                        // Get.toNamed('/question2');
+                        if (controller.isSelectedA1.value ||
+                            controller.isSelectedA3.value == true) {
+                          controller.isSelectedA2.value = true;
+                          controller.isSelectedA1.value = false;
+                          controller.isSelectedA3.value = false;
+                        } else {
+                          controller.isSelectedA2.value = true;
+                        }
+                        controller.isSelectedA2.value = true;
+                        controller.hover2.value = true;
                         controller.storage.write('1', 'B');
+                        print('q1: ${controller.storage.read('1')}');
                         Get.toNamed('/question2');
                       },
                     ),
@@ -76,11 +96,21 @@ class Question1View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 3,
                       codeKey: controller.hover3,
+                      isSelected: controller.isSelectedA3,
                       question: '.',
                       onTap: () {
-                        // resultController.questionList.insert(0, 'C');
-                        // Get.toNamed('/question2');
+                        if (controller.isSelectedA1.value ||
+                            controller.isSelectedA2.value == true) {
+                          controller.isSelectedA3.value = true;
+                          controller.isSelectedA1.value = false;
+                          controller.isSelectedA2.value = false;
+                        } else {
+                          controller.isSelectedA3.value = true;
+                        }
+                        controller.isSelectedA3.value = true;
+                        controller.hover3.value = true;
                         controller.storage.write('1', 'C');
+                        print('q1: ${controller.storage.read('1')}');
                         Get.toNamed('/question2');
                       },
                     ),

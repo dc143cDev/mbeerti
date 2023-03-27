@@ -14,7 +14,7 @@ class Question2View extends GetView<QuestionController> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // print(resultController.questionList.join().toString());
+          print(controller.isSelectedA1.value);
         },
       ),
       appBar: AppBar(

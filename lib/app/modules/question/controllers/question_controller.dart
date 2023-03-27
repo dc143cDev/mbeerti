@@ -8,7 +8,16 @@ class QuestionController extends GetxController {
 
   var columnUp = false.obs;
 
-  var isHover = true.obs;
+  var isSelectedA1 = false.obs;
+  var isSelectedA2 = false.obs;
+  var isSelectedA3 = false.obs;
+  var isSelectedA4 = false.obs;
+
+  var isSelectedB1 = false.obs;
+  var isSelectedB2 = false.obs;
+  var isSelectedB3 = false.obs;
+  var isSelectedB4 = false.obs;
+
   var hover1 = false.obs;
   var hover2 = false.obs;
   var hover3 = false.obs;

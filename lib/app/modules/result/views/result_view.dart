@@ -15,31 +15,93 @@ class ResultView extends GetView<ResultController> {
         title: const Text('ResultView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(200.0),
-          child: ModelViewer(
-            src: 'assets/objects/beer_done.glb',
-            ar: true,
-            autoRotate: true,
-            cameraControls: false,
-            disableZoom: true,
-            disablePan: true,
-            disableTap: true,
+      body: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              width: 200,
+              height: 200,
+              child: ModelViewer(
+                src: 'assets/objects/foods/orange.glb',
+                ar: true,
+                autoRotate: true,
+                cameraControls: false,
+                disableZoom: true,
+                disablePan: true,
+                disableTap: true,
+              ),
+            ),
           ),
-        ),
-        //.glb
-        // child: BabylonJSViewer(
-        //   src: 'assets/objects/beer_done.glb',
-        // ),
-        //.obj
-        // child: Cube(
-        //   onSceneCreated: (Scene s) {
-        //     s.camera.zoom = 10;
-        //     s.world.add(
-        //         Object(fileName: 'assets/objects/beer_test/beer_done1.obj'));
-        //   },
-        // ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              width: 200,
+              height: 200,
+              child: ModelViewer(
+                src: 'assets/objects/beer_test/beer_done.glb',
+                ar: true,
+                autoRotate: true,
+                cameraControls: false,
+                disableZoom: true,
+                disablePan: true,
+                disableTap: true,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              width: 200,
+              height: 200,
+              child: ModelViewer(
+                src: 'assets/objects/beer_test/beer_done.glb',
+                ar: true,
+                autoRotate: true,
+                cameraControls: false,
+                disableZoom: true,
+                disablePan: true,
+                disableTap: true,
+              ),
+            ),
+          ),
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  width: 400,
+                  height: 400,
+                  child: ModelViewer(
+                    src: 'assets/objects/foods/chocolate.glb',
+                    ar: true,
+                    autoRotate: true,
+                    cameraControls: false,
+                    disableZoom: true,
+                    disablePan: true,
+                    disableTap: true,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  child: ModelViewer(
+                    src: 'assets/objects/foods/orange.glb',
+                    ar: true,
+                    autoRotate: true,
+                    cameraControls: false,
+                    disableZoom: true,
+                    disablePan: true,
+                    disableTap: true,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

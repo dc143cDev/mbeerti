@@ -9,12 +9,14 @@ class QuestionButton<T> extends GetView<QuestionController> {
     this.onTap,
     this.question,
     this.codeKey,
+    this.isSelected,
     required this.value,
   }) : super(key: key);
 
   final String? question;
   final Function()? onTap;
   late final RxObjectMixin? codeKey;
+  late final RxObjectMixin? isSelected;
   final T value;
 
   @override
@@ -41,7 +43,7 @@ class QuestionButton<T> extends GetView<QuestionController> {
             curve: Curves.ease,
             // padding: EdgeInsets.all(codeKey?.value ? 30 : 10),
             decoration: BoxDecoration(
-                color: codeKey?.value ? hopGreen : Colors.white,
+                color: isSelected?.value ? hopGreen : Colors.white,
                 // color: codeKey?.value ? hopGreen : Colors.white,
                 borderRadius: BorderRadius.circular(40),
                 boxShadow: [
@@ -55,8 +57,8 @@ class QuestionButton<T> extends GetView<QuestionController> {
             child: Center(
               child: Text(
                 question!,
-                style:
-                    TextStyle(color: codeKey?.value ? Colors.white : hopGreen),
+                style: TextStyle(
+                    color: isSelected?.value ? Colors.white : hopGreen),
               ),
             ),
           ),
