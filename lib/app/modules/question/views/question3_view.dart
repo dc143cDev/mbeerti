@@ -6,38 +6,48 @@ import 'package:mbeerti/app/modules/question/controllers/question_controller.dar
 import 'package:mbeerti/global/question_button.dart';
 import 'package:mbeerti/app/modules/result/controllers/result_controller.dart';
 
+import '../../../../global/main_text.dart';
+import '../../../../global/palette.dart';
+
 class Question3View extends GetView<QuestionController> {
   const Question3View({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Get.put(QuestionController());
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          controller.getResult();
-          print(controller.questionList.join().toString());
-        },
-      ),
-      appBar: AppBar(
-        title: const Text('Question3View'),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-      ),
+      backgroundColor: Colors.white,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     controller.columnUp.value = true;
+      //     // print(controller.isHover.value.toString());
+      //   },
+      // ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              flex: 3,
-              child: Text('애니메이션 일러스트 자리'),
-            ),
+                flex: 3,
+                child: Text(
+                  'Q3.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'NTKR',
+                    color: hopGreen,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 25,
+                  ),
+                )),
             Expanded(
               flex: 2,
-              child: Text('(세번째 질문)'),
+              child: MainText(
+                text: '처음 방문해보는 보틀샵, 진열대에는 처음 보는 술들로 가득하다.\n당신의 선택은?',
+                fontWeight: FontWeight.w700,
+              ),
             ),
             Expanded(
-              flex: 4,
+              flex: 5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -47,11 +57,23 @@ class Question3View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 1,
                       codeKey: controller.hover1,
-                      question: '3-A.',
+                      isSelected: controller.isSelected3A,
+                      question: '모험은 싫어. 실패 없는 맛으로 고르자.',
                       onTap: () {
-                        // resultController.questionList.insert(0, 'A');
-                        // Get.toNamed('/question2');
-                        controller.storage.write('1', 'A');
+                        if (controller.isSelected3B.value ||
+                            controller.isSelected3C.value ||
+                            controller.isSelected3D.value == true) {
+                          controller.isSelected3A.value = true;
+                          controller.isSelected3B.value = false;
+                          controller.isSelected3C.value = false;
+                          controller.isSelected3D.value = false;
+                        } else {
+                          controller.isSelected3A.value = true;
+                        }
+                        controller.hover1.value = true;
+                        controller.storage.write('3', 'A');
+                        print('q3: ${controller.storage.read('3')}');
+                        controller.getFirstCode();
                         Get.toNamed('/question4');
                       },
                     ),
@@ -64,11 +86,24 @@ class Question3View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 2,
                       codeKey: controller.hover2,
-                      question: '부드러운 라떼(탄산이 아예 없는 부드러운 질감 선호).',
+                      isSelected: controller.isSelected3B,
+                      question: '그래도 적당히 들어본 걸로 고른다.',
                       onTap: () {
-                        // resultController.questionList.insert(0, 'B');
-                        // Get.toNamed('/question2');
-                        controller.storage.write('1', 'B');
+                        if (controller.isSelected3A.value ||
+                            controller.isSelected3C.value ||
+                            controller.isSelected3D.value == true) {
+                          controller.isSelected3B.value = true;
+                          controller.isSelected3A.value = false;
+                          controller.isSelected3C.value = false;
+                          controller.isSelected3D.value = false;
+                        } else {
+                          controller.isSelected3B.value = true;
+                        }
+                        controller.isSelected3B.value = true;
+                        controller.hover2.value = true;
+                        controller.storage.write('3', 'B');
+                        print('q3: ${controller.storage.read('3')}');
+                        controller.getFirstCode();
                         Get.toNamed('/question4');
                       },
                     ),
@@ -81,17 +116,60 @@ class Question3View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 3,
                       codeKey: controller.hover3,
-                      question: '.',
+                      isSelected: controller.isSelected3C,
+                      question: '먹는것도 경험이니까, 오늘은 평소에 안 먹어본 걸로 고를래.',
                       onTap: () {
-                        // resultController.questionList.insert(0, 'C');
-                        // Get.toNamed('/question2');
-                        controller.storage.write('1', 'C');
+                        if (controller.isSelected3A.value ||
+                            controller.isSelected3B.value ||
+                            controller.isSelected3D == true) {
+                          controller.isSelected3C.value = true;
+                          controller.isSelected3A.value = false;
+                          controller.isSelected3B.value = false;
+                          controller.isSelected3D.value = false;
+                        } else {
+                          controller.isSelected3C.value = true;
+                        }
+                        controller.isSelected3C.value = true;
+                        controller.hover3.value = true;
+                        controller.storage.write('3', 'C');
+                        print('q3: ${controller.storage.read('3')}');
+                        controller.getFirstCode();
                         Get.toNamed('/question4');
                       },
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
+                  ),
+                  Expanded(
+                    //1-C.
+                    child: QuestionButton(
+                      value: 4,
+                      codeKey: controller.hover4,
+                      isSelected: controller.isSelected3D,
+                      question: '이중에서 제일 특이한 술이 뭐에요?',
+                      onTap: () {
+                        if (controller.isSelected3A.value ||
+                            controller.isSelected3B.value ||
+                            controller.isSelected3C.value == true) {
+                          controller.isSelected3D.value = true;
+                          controller.isSelected3A.value = false;
+                          controller.isSelected3B.value = false;
+                          controller.isSelected3C.value = false;
+                        } else {
+                          controller.isSelected3D.value = true;
+                        }
+                        controller.isSelected3D.value = true;
+                        controller.hover4.value = true;
+                        controller.storage.write('3', 'D');
+                        print('q3: ${controller.storage.read('3')}');
+                        controller.getFirstCode();
+                        Get.toNamed('/question4');
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                 ],
               ),

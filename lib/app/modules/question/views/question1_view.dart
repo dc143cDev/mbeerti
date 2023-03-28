@@ -15,12 +15,12 @@ class Question1View extends GetView<QuestionController> {
     Get.put(QuestionController());
     return Scaffold(
       backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          controller.columnUp.value = true;
-          // print(controller.isHover.value.toString());
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     controller.columnUp.value = true;
+      //     // print(controller.isHover.value.toString());
+      //   },
+      // ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +41,7 @@ class Question1View extends GetView<QuestionController> {
             Expanded(
               flex: 2,
               child: MainText(
-                text: '오랜만에 잡힌 술 약속, 오늘은 내가 약속 장소를 정하는 날이에요.\n어디로 갈까요?',
+                text: '오랜만에 잡힌 술 약속, 이번 약속 장소는 내가 정하기로 했다.\n어디로 갈까?',
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -56,18 +56,18 @@ class Question1View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 1,
                       codeKey: controller.hover1,
-                      isSelected: controller.isSelectedA1,
-                      question: '탄산음료(강한 탄산감 선호).',
+                      isSelected: controller.isSelected1A,
+                      question: '오늘은 먹고 죽는 날. 생맥주 무한리필 호프집.',
                       onTap: () {
-                        if (controller.isSelectedA2.value ||
-                            controller.isSelectedA3.value ||
-                            controller.isSelectedA4.value == true) {
-                          controller.isSelectedA1.value = true;
-                          controller.isSelectedA2.value = false;
-                          controller.isSelectedA3.value = false;
-                          controller.isSelectedA4.value = false;
+                        if (controller.isSelected1B.value ||
+                            controller.isSelected1C.value ||
+                            controller.isSelected1D.value == true) {
+                          controller.isSelected1A.value = true;
+                          controller.isSelected1B.value = false;
+                          controller.isSelected1C.value = false;
+                          controller.isSelected1D.value = false;
                         } else {
-                          controller.isSelectedA1.value = true;
+                          controller.isSelected1A.value = true;
                         }
                         controller.hover1.value = true;
                         controller.storage.write('1', 'A');
@@ -84,20 +84,20 @@ class Question1View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 2,
                       codeKey: controller.hover2,
-                      isSelected: controller.isSelectedA2,
-                      question: '부드러운 라떼(탄산이 아예 없는 부드러운 질감 선호).',
+                      isSelected: controller.isSelected1B,
+                      question: '기분좋게 취하기 좋은 시끌벅적한 펍.',
                       onTap: () {
-                        if (controller.isSelectedA1.value ||
-                            controller.isSelectedA3.value ||
-                            controller.isSelectedA4.value == true) {
-                          controller.isSelectedA2.value = true;
-                          controller.isSelectedA1.value = false;
-                          controller.isSelectedA3.value = false;
-                          controller.isSelectedA4.value = false;
+                        if (controller.isSelected1A.value ||
+                            controller.isSelected1C.value ||
+                            controller.isSelected1D.value == true) {
+                          controller.isSelected1B.value = true;
+                          controller.isSelected1A.value = false;
+                          controller.isSelected1C.value = false;
+                          controller.isSelected1D.value = false;
                         } else {
-                          controller.isSelectedA2.value = true;
+                          controller.isSelected1B.value = true;
                         }
-                        controller.isSelectedA2.value = true;
+                        controller.isSelected1B.value = true;
                         controller.hover2.value = true;
                         controller.storage.write('1', 'B');
                         print('q1: ${controller.storage.read('1')}');
@@ -113,20 +113,20 @@ class Question1View extends GetView<QuestionController> {
                     child: QuestionButton(
                       value: 3,
                       codeKey: controller.hover3,
-                      isSelected: controller.isSelectedA3,
-                      question: '.',
+                      isSelected: controller.isSelected1C,
+                      question: '잔잔하게 떠들면서 술을 즐기기 좋은 케주얼 바.',
                       onTap: () {
-                        if (controller.isSelectedA1.value ||
-                            controller.isSelectedA2.value ||
-                            controller.isSelectedA4 == true) {
-                          controller.isSelectedA3.value = true;
-                          controller.isSelectedA1.value = false;
-                          controller.isSelectedA2.value = false;
-                          controller.isSelectedA4.value = false;
+                        if (controller.isSelected1A.value ||
+                            controller.isSelected1B.value ||
+                            controller.isSelected1D == true) {
+                          controller.isSelected1C.value = true;
+                          controller.isSelected1A.value = false;
+                          controller.isSelected1B.value = false;
+                          controller.isSelected1D.value = false;
                         } else {
-                          controller.isSelectedA3.value = true;
+                          controller.isSelected1C.value = true;
                         }
-                        controller.isSelectedA3.value = true;
+                        controller.isSelected1C.value = true;
                         controller.hover3.value = true;
                         controller.storage.write('1', 'C');
                         print('q1: ${controller.storage.read('1')}');
@@ -140,22 +140,22 @@ class Question1View extends GetView<QuestionController> {
                   Expanded(
                     //1-C.
                     child: QuestionButton(
-                      value: 3,
+                      value: 4,
                       codeKey: controller.hover4,
-                      isSelected: controller.isSelectedA4,
-                      question: '.',
+                      isSelected: controller.isSelected1D,
+                      question: '오로지 술에 집중. 몰트/테이스팅 바.',
                       onTap: () {
-                        if (controller.isSelectedA1.value ||
-                            controller.isSelectedA2.value ||
-                            controller.isSelectedA3.value == true) {
-                          controller.isSelectedA4.value = true;
-                          controller.isSelectedA1.value = false;
-                          controller.isSelectedA2.value = false;
-                          controller.isSelectedA3.value = false;
+                        if (controller.isSelected1A.value ||
+                            controller.isSelected1B.value ||
+                            controller.isSelected1C.value == true) {
+                          controller.isSelected1D.value = true;
+                          controller.isSelected1A.value = false;
+                          controller.isSelected1B.value = false;
+                          controller.isSelected1C.value = false;
                         } else {
-                          controller.isSelectedA4.value = true;
+                          controller.isSelected1D.value = true;
                         }
-                        controller.isSelectedA4.value = true;
+                        controller.isSelected1D.value = true;
                         controller.hover4.value = true;
                         controller.storage.write('1', 'D');
                         print('q1: ${controller.storage.read('1')}');
