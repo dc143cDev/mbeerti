@@ -74,7 +74,11 @@ class Question3View extends GetView<QuestionController> {
                         controller.storage.write('3', 'A');
                         print('q3: ${controller.storage.read('3')}');
                         controller.getFirstCode();
-                        Get.toNamed('/question4');
+                        if (controller.firstCode.toString() == '[A, A, A]' ||
+                            controller.firstCode.toString() == '[D, D, D]') {
+                          Get.toNamed('/questionEx');
+                        } else
+                          Get.toNamed('/question4');
                       },
                     ),
                   ),
@@ -104,7 +108,11 @@ class Question3View extends GetView<QuestionController> {
                         controller.storage.write('3', 'B');
                         print('q3: ${controller.storage.read('3')}');
                         controller.getFirstCode();
-                        Get.toNamed('/question4');
+                        if (controller.firstCode.toString() == '[A, A, A]' ||
+                            controller.firstCode.toString() == '[D, D, D]') {
+                          Get.toNamed('/questionEx');
+                        } else
+                          Get.toNamed('/question4');
                       },
                     ),
                   ),
@@ -134,7 +142,11 @@ class Question3View extends GetView<QuestionController> {
                         controller.storage.write('3', 'C');
                         print('q3: ${controller.storage.read('3')}');
                         controller.getFirstCode();
-                        Get.toNamed('/question4');
+                        if (controller.firstCode.toString() == '[A, A, A]' ||
+                            controller.firstCode.toString() == '[D, D, D]') {
+                          Get.toNamed('/questionEx');
+                        } else
+                          Get.toNamed('/question4');
                       },
                     ),
                   ),
@@ -164,7 +176,11 @@ class Question3View extends GetView<QuestionController> {
                         controller.storage.write('3', 'D');
                         print('q3: ${controller.storage.read('3')}');
                         controller.getFirstCode();
-                        Get.toNamed('/question4');
+                        if (controller.firstCode.toString() == '[A, A, A]' ||
+                            controller.firstCode.toString() == '[D, D, D]') {
+                          Get.toNamed('/questionEx');
+                        } else
+                          Get.toNamed('/question4');
                       },
                     ),
                   ),

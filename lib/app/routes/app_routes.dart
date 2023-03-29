@@ -10,6 +10,7 @@ abstract class Routes {
   static const QUESTION4 = _Paths.QUESTION4;
   static const QUESTION5 = _Paths.QUESTION5;
   static const RESULT = _Paths.RESULT;
+  static const LOCK = _Paths.LOCK;
 }
 
 abstract class _Paths {
@@ -20,5 +21,7 @@ abstract class _Paths {
   static const QUESTION3 = '/question3';
   static const QUESTION4 = '/question4';
   static const QUESTION5 = '/question5';
+  static const QUESTIONEX = '/questionEx';
   static const RESULT = '/result';
+  static const LOCK = '/lock';
 }

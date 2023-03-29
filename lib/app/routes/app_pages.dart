@@ -2,10 +2,13 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/lock/bindings/lock_binding.dart';
+import '../modules/lock/views/lock_view.dart';
 import '../modules/question/bindings/question_binding.dart';
 import '../modules/question/views/question2_view.dart';
 import '../modules/question/views/question3_view.dart';
 import '../modules/question/views/question4_view.dart';
+import '../modules/question/views/question_ex_view.dart';
 import '../modules/question/views/question_view.dart';
 import '../modules/result/bindings/result_binding.dart';
 import '../modules/result/views/result_view.dart';
@@ -15,7 +18,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.LOCK;
 
   static final routes = [
     GetPage(
@@ -47,6 +50,12 @@ class AppPages {
       binding: QuestionBinding(),
       transition: Transition.noTransition,
     ),
+    GetPage(
+      name: _Paths.QUESTIONEX,
+      page: () => QuestionExView(),
+      binding: QuestionBinding(),
+      transition: Transition.noTransition,
+    ),
     // GetPage(
     //   name: _Paths.QUESTION5,
     //   page: () => Question5View(),
@@ -56,6 +65,11 @@ class AppPages {
       name: _Paths.RESULT,
       page: () => const ResultView(),
       binding: ResultBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOCK,
+      page: () => const LockView(),
+      binding: LockBinding(),
     ),
   ];
 }

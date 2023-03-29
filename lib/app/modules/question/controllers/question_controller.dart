@@ -33,6 +33,7 @@ class QuestionController extends GetxController {
   var hover4 = false.obs;
 
   getFirstCode() {
+    firstCode.clear();
     firstCode.insert(0, storage.read('1'));
     firstCode.insert(1, storage.read('2'));
     firstCode.insert(2, storage.read('3'));
