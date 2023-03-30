@@ -11,7 +11,7 @@ class LockView extends GetView<LockController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LockView'),
+        title: const Text('build1'),
         centerTitle: true,
       ),
       body: Column(
@@ -23,7 +23,7 @@ class LockView extends GetView<LockController> {
             child: TextButton(
               onPressed: () {
                 if (controller.password == controller.passwordController.text) {
-                  Get.off(HomeView());
+                  Get.to(HomeView());
                 } else {
                   Get.snackbar('password error', 'f');
                 }

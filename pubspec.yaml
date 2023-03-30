@@ -14,7 +14,6 @@ dependencies:
   get_storage: ^2.1.1
   flutter_cube: ^0.1.1
   model_viewer_plus: ^1.5.0
-#  babylonjs_viewer: ^1.2.1
 
 dev_dependencies: 
   flutter_lints: ^2.0.0

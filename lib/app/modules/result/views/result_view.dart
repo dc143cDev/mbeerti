@@ -12,80 +12,63 @@ class ResultView extends GetView<ResultController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ResultView'),
+        title: const Text('ResultView10'),
         centerTitle: true,
       ),
-      body: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              width: 300,
-              height: 300,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 50,
+              height: 50,
               child: ModelViewer(
-                src: 'assets/objects/beer_test/beer_really_done2.glb',
-                ar: true,
+                src: 'http://localhost:3000/assets/chocolate.glb',
+                ar: false,
                 autoRotate: true,
-                cameraControls: false,
+                cameraControls: true,
                 disableZoom: true,
                 disablePan: true,
-                disableTap: true,
+                disableTap: false,
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              width: 200,
-              height: 200,
+            Container(
+              width: 50,
+              height: 50,
               child: ModelViewer(
-                src: 'assets/objects/beer_test/beer_done.glb',
-                ar: true,
+                src:
+                    'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
+                ar: false,
                 autoRotate: true,
-                cameraControls: false,
+                cameraControls: true,
                 disableZoom: true,
                 disablePan: true,
-                disableTap: true,
+                disableTap: false,
               ),
             ),
-          ),
-          Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  width: 400,
-                  height: 400,
-                  child: ModelViewer(
-                    src: 'assets/objects/foods/chocolate.glb',
-                    ar: true,
-                    autoRotate: true,
-                    cameraControls: false,
-                    disableZoom: true,
-                    disablePan: true,
-                    disableTap: true,
-                  ),
-                ),
+            Container(
+              width: 50,
+              height: 50,
+              child: ModelViewer(
+                src: 'http://localhost:3000/assets/Astronaut.glb',
+                ar: false,
+                autoRotate: true,
+                cameraControls: true,
+                disableZoom: true,
+                disablePan: true,
+                disableTap: false,
               ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  child: ModelViewer(
-                    src: 'assets/objects/foods/orange.glb',
-                    ar: true,
-                    autoRotate: true,
-                    cameraControls: false,
-                    disableZoom: true,
-                    disablePan: true,
-                    disableTap: true,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              child: Image(
+                  image: NetworkImage(
+                      'http://localhost:3000/assets/cappuccino.jpg')),
+            ),
+          ],
+        ),
       ),
     );
   }
