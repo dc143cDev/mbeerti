@@ -21,7 +21,10 @@ abstract class _Paths {
   static const QUESTION3 = '/question3';
   static const QUESTION4 = '/question4';
   static const QUESTION5 = '/question5';
-  static const QUESTIONEX = '/questionEx';
+  static const QUESTION6 = '/question6';
+  static const QUESTION7 = '/question7';
+  static const QUESTION8 = '/question8';
+  static const QUESTION9 = '/question9';
   static const RESULT = '/result';
   static const LOCK = '/lock';
 }

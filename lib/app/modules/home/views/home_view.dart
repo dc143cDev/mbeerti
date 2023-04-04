@@ -6,7 +6,7 @@ import 'package:mbeerti/global/logo_text.dart';
 import 'package:mbeerti/global/main_text.dart';
 import 'package:mbeerti/global/palette.dart';
 
-import '../../question/views/question1_view.dart';
+import '../../question/views/question_view.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {

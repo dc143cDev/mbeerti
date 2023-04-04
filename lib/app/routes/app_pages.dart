@@ -5,10 +5,6 @@ import '../modules/home/views/home_view.dart';
 import '../modules/lock/bindings/lock_binding.dart';
 import '../modules/lock/views/lock_view.dart';
 import '../modules/question/bindings/question_binding.dart';
-import '../modules/question/views/question2_view.dart';
-import '../modules/question/views/question3_view.dart';
-import '../modules/question/views/question4_view.dart';
-import '../modules/question/views/question_ex_view.dart';
 import '../modules/question/views/question_view.dart';
 import '../modules/result/bindings/result_binding.dart';
 import '../modules/result/views/result_view.dart';
@@ -28,7 +24,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.QUESTION,
-      page: () => QuestionView(),
+      page: () => Question1View(),
       binding: QuestionBinding(),
       transition: Transition.noTransition,
     ),
@@ -51,16 +47,40 @@ class AppPages {
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.QUESTIONEX,
-      page: () => QuestionExView(),
+      name: _Paths.QUESTION5,
+      page: () => Question5View(),
       binding: QuestionBinding(),
       transition: Transition.noTransition,
     ),
-    // GetPage(
-    //   name: _Paths.QUESTION5,
-    //   page: () => Question5View(),
-    //   binding: QuestionBinding(),
-    // ),
+    GetPage(
+      name: _Paths.QUESTION5,
+      page: () => Question5View(),
+      binding: QuestionBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.QUESTION6,
+      page: () => Question6View(),
+      binding: QuestionBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.QUESTION7,
+      page: () => Question7View(),
+      binding: QuestionBinding(),
+      transition: Transition.noTransition,
+    ),GetPage(
+      name: _Paths.QUESTION8,
+      page: () => Question8View(),
+      binding: QuestionBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.QUESTION9,
+      page: () => Question9View(),
+      binding: QuestionBinding(),
+      transition: Transition.noTransition,
+    ),
     GetPage(
       name: _Paths.RESULT,
       page: () => const ResultView(),

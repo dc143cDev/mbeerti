@@ -83,8 +83,11 @@ class QuestionTemplate extends GetView<QuestionController> {
                           } else {
                             isSelected?.value = true;
                           }
-                          controller.storage.write(storageNum!, 'A');
+                          controller.storage.write('${storageNum}', 'A');
                           onTap;
+                          print(controller.storage
+                              .read('${storageNum}')
+                              .toString());
                           Get.toNamed(nav!);
                         },
                         onHover: (h) {
@@ -145,8 +148,11 @@ class QuestionTemplate extends GetView<QuestionController> {
                           } else {
                             isSelectedAlt?.value = true;
                           }
-                          controller.storage.write(storageNum!, 'B');
+                          controller.storage.write('${storageNum}', 'B');
                           onTap;
+                          print(controller.storage
+                              .read('${storageNum}')
+                              .toString());
                           Get.toNamed(nav!);
                         },
                         onHover: (h) {
