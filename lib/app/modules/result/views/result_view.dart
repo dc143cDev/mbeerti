@@ -10,9 +10,15 @@ class ResultView extends GetView<ResultController> {
   const ResultView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.put(ResultController());
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          controller.animationTest.value = true;
+        },
+      ),
       appBar: AppBar(
-        title: const Text('ResultView10'),
+        title: const Text('ResultView12'),
         centerTitle: true,
       ),
       body: Center(
@@ -20,52 +26,31 @@ class ResultView extends GetView<ResultController> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: 50,
-              height: 50,
-              child: ModelViewer(
-                src: 'http://localhost:3000/assets/chocolate.glb',
-                ar: false,
-                autoRotate: true,
-                cameraControls: true,
-                disableZoom: true,
-                disablePan: true,
-                disableTap: false,
-              ),
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              child: ModelViewer(
-                src:
-                    'https://modelviewer.dev/shared-assets/models/Astronaut.glb',
-                ar: false,
-                autoRotate: true,
-                cameraControls: true,
-                disableZoom: true,
-                disablePan: true,
-                disableTap: false,
-              ),
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              child: ModelViewer(
-                src: 'http://localhost:3000/assets/Astronaut.glb',
-                ar: false,
-                autoRotate: true,
-                cameraControls: true,
-                disableZoom: true,
-                disablePan: true,
-                disableTap: false,
-              ),
-            ),
-            Container(
-              width: 50,
-              height: 50,
-              child: Image(
-                  image: NetworkImage(
-                      'http://localhost:3000/assets/cappuccino.jpg')),
+            Stack(
+              children: [
+                // Container(
+                //   width: 200,
+                //   height: 200,
+                //   color: Colors.red,
+                // ),
+                Obx(
+                  () => AnimatedContainer(
+                    width: controller.animationTest.value ? 200 : 100,
+                    height: controller.animationTest.value ? 200 : 100,
+                    duration: Duration(seconds: 2),
+                    child: ModelViewer(
+                      src:
+                          'https://firebasestorage.googleapis.com/v0/b/mbeerti-ffa02.appspot.com/o/objects%2Fbeer_really_done%20(2).glb?alt=media&token=8b71e98b-2031-4774-a68d-aa0e48fd1080',
+                      ar: false,
+                      autoRotate: true,
+                      cameraControls: true,
+                      disableZoom: true,
+                      disablePan: true,
+                      disableTap: false,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
