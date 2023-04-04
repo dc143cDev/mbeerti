@@ -6,17 +6,25 @@ import 'package:mbeerti/global/palette.dart';
 class QuestionButton<T> extends GetView<QuestionController> {
   QuestionButton({
     Key? key,
+    this.isSelectedAlt,
+    this.AorB,
+    this.storageNum,
     this.onTap,
     this.question,
     this.codeKey,
     this.isSelected,
+    this.nav,
     required this.value,
   }) : super(key: key);
 
+  final String? nav;
   final String? question;
   final Function()? onTap;
   late final RxObjectMixin? codeKey;
   late final RxObjectMixin? isSelected;
+  late final RxObjectMixin? isSelectedAlt;
+  final String? AorB;
+  final String? storageNum;
   final T value;
 
   @override
@@ -27,7 +35,16 @@ class QuestionButton<T> extends GetView<QuestionController> {
         horizontal: 120,
       ),
       child: InkWell(
-        onTap: onTap,
+        onTap: () {
+          if (isSelected?.value == true) {
+            isSelected?.value = true;
+            isSelectedAlt?.value = false;
+          } else {
+            isSelected?.value = true;
+          }
+          controller.storage.write(storageNum!, AorB);
+          Get.toNamed(nav!);
+        },
         onHover: (h) {
           codeKey?.value = h;
           // print(controller.isHover.value.toString());

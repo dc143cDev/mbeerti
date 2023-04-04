@@ -56,14 +56,14 @@ class HomeView extends GetView<HomeController> {
                     ),
                     Obx(
                       () => AnimatedContainer(
-                        duration: Duration(milliseconds: 340),
+                        duration: Duration(milliseconds: 400),
                         transform: Transform.translate(
                           offset: Offset(
                               0, controller.animationCount.value ? -25 : 0),
                         ).transform,
                         child: AnimatedOpacity(
                           opacity: controller.animationCount.value ? 1.0 : 0.0,
-                          duration: Duration(milliseconds: 340),
+                          duration: Duration(milliseconds: 400),
                           child: Text(
                             '세상은 넓고, 먹어볼 맥주는 많다.',
                             style: TextStyle(
@@ -81,14 +81,14 @@ class HomeView extends GetView<HomeController> {
                     ),
                     Obx(
                       () => AnimatedContainer(
-                        duration: Duration(milliseconds: 360),
+                        duration: Duration(milliseconds: 480),
                         transform: Transform.translate(
                           offset: Offset(
                               0, controller.animationCount.value ? -25 : 0),
                         ).transform,
                         child: AnimatedOpacity(
                           opacity: controller.animationCount.value ? 1.0 : 0.0,
-                          duration: Duration(milliseconds: 360),
+                          duration: Duration(milliseconds: 480),
                           child: Text(
                             '맥주 스타일의 가짓수가 총 몇가지나 될 거라고 생각하나요?\n정확히는 알 수 없지만, 약 200가지가 넘어요.\n먼 옛날부터 전해져온 클래식부터, 창의력 넘치고 트랜디한 크래프트 맥주까지.\nMbeerti가 당신에게 제일 잘 어울리는 맥주 스타일을 찾아드릴게요.',
                             textAlign: TextAlign.center,
@@ -130,8 +130,12 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                 )
-              : CircularProgressIndicator(
-                  color: hopGreen,
+              : CircleAvatar(
+                  radius: 35,
+                  backgroundColor: hopGreen,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
                 ),
         ),
       ),
