@@ -73,6 +73,7 @@ class QuestionTemplate extends GetView<QuestionController> {
                     //1-A.
                     child: Padding(
                       padding: EdgeInsets.symmetric(
+                        vertical: 40,
                         horizontal: 120,
                       ),
                       child: InkWell(
@@ -131,13 +132,11 @@ class QuestionTemplate extends GetView<QuestionController> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
                   Expanded(
                     //1-B.
                     child: Padding(
                       padding: EdgeInsets.symmetric(
+                        vertical: 40,
                         horizontal: 120,
                       ),
                       child: InkWell(
